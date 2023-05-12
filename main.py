@@ -1,7 +1,7 @@
 from flask import Flask, request 
 import pandas as pd 
 
-df = pd.read_csv('Data/utilization2019csv.csv')
+df = pd.read_csv('data/utilization2019csv.csv')
 
 app = Flask(__name__)
 
