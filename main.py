@@ -21,21 +21,21 @@ def icdcode(value):
     filtered = df[df['county_code'] == value]
     return filtered.to_json(orient="records")
 
-#7.0
-@app.route('/silly/<value>', methods=['GET'])
-def countycode(value):
+#504
+@app.route('/filter/<value>', methods=['GET'])
+def member_months(value):
     print('value: ', value)
-    filtered = df[df['encounter_count'] == value]
+    filtered = df[df['member_months'] == value]
     if len(filtered) <= 0:
         return 'There is nothing here'
     else: 
         return filtered.to_json(orient="records")
 
-#7.0
-@app.route('/silly/<value>/sex/<value2>', methods=['GET'])
-def countycode2(value, value2):
-    filtered = df[df['encounter_count'] == value]
-    filtered2 = filtered[filtered['sex'] == value2]
+#504
+@app.route('/filter/<value>/payer/<value2>', methods=['GET'])
+def member_months2(value, value2):
+    filtered = df[df['member_months'] == value]
+    filtered2 = filtered[filtered['payer'] == value2]
     if len(filtered2) <= 0:
         return 'There is nothing here'
     else: 
