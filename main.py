@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def home():
-    return 'Time to get some encounter count!!!..... I Hope.....'
+    return 'Member_month'
 
 @app.route('/preview', methods=["GET"])
 def preview():
